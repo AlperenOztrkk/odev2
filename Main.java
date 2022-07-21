@@ -1,5 +1,7 @@
 package odev2;
 
+import java.util.List;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -18,14 +20,19 @@ public class Main {
 		
 		Course course2 =new Course("C#",category,instructor2);
 		
+		 CourseManager courseManger=new CourseManager();
+		 courseManger.add(course2);
+		 courseManger.add(course1);
 		
-		
-		
-          System.out.println("**************************");
-          System.out.println("Kurslar");
-          System.out.println(instructor1.getFirstName() +" "+instructor1.getLastName());
+		 List<Course> courses=courseManger.getAll();
+		 
+		 for(Course course:courses) {
+			 System.out.println(course1.getName() + " " + course1.getCategory().getName() + " " + course1.getInstructer().getFirstName() + " " +course1.getInstructer().getLastName());
+		 }
+		 
+        
          
-          System.out.println(course1.getName() +"\n"+ course1.getCategory().getName());
+       
        
           
 	}
